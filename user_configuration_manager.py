@@ -1,12 +1,12 @@
 # Dictionary containing the default user settings
 test_settings = {
-    'Theme': 'dark',
-    'Notifications': 'enabled',
-    'Volume': 'high'
+    'theme': 'dark',
+    'notifications': 'enabled',
+    'volume': 'high'
 }
 
 # Function to add a new setting to the dictionary
-def add_setting(settings_dict, settings_tup):
+def add_setting(settings_dict: dict, settings_tup: tuple) -> str:
     # Convert the key and value to lowercase for consistency
     key = settings_tup[0].lower()
     value = settings_tup[1].lower()
@@ -22,8 +22,9 @@ def add_setting(settings_dict, settings_tup):
 # Function to update an existing setting
 def update_setting(settings_dict, settings_tup):
     # Convert the key and value to lowercase
-    key = settings_tup[0].lower()
-    value = settings_tup[1].lower()
+    key, value = settings_tup
+    key = key.lower()
+    value = value.lower()
 
     # Check if the setting exists before updating
     if key in settings_dict:
